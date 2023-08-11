@@ -1,14 +1,26 @@
 import './App.css';
 import {useEffect, useState} from "react"
 function App() {
-  // On page render (on mount) => get request.
+  // establish apiResult state to store response data
   const [apiResult, setApiResult] = useState();
+  // async function to handle requests to backend
+  async function fetchData(){
+    // get request
+    let response = await fetch("http://localhost:8000");
+    // Parse the JSON response
+    let data = await response.json();
+    // Set state to response 
+    setApiResult(data.message);
+  }
+  
+  // On page render (on mount) => call fetch function
   useEffect(()=>{
-    let response = fetch("http://localhost:8000");
-    let data = JSON.parse(response);
-    setApiResult(data);
+    console.log(apiResult)
+    fetchData()
   }, []);
+
   return(
+    // render result on page.
     <h1>{apiResult}</h1>
   )
 }
