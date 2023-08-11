@@ -1,7 +1,16 @@
 import './App.css';
-import useEffect from "react"
+import {useEffect, useState} from "react"
 function App() {
   // On page render (on mount) => get request.
+  const [apiResult, setApiResult] = useState();
+  useEffect(()=>{
+    let response = fetch("http://localhost:8000");
+    let data = JSON.parse(response);
+    setApiResult(data);
+  }, []);
+  return(
+    <h1>{apiResult}</h1>
+  )
 }
 
 
