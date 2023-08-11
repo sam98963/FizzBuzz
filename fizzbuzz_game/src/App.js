@@ -1,6 +1,7 @@
 import './App.css';
-
+import useEffect from "react"
 function App() {
+  // On page render (on mount) => get request.
 }
 
 
