@@ -9,10 +9,10 @@ Create a Json file with all numbers in. ✅
 Todays plan:  
 - Populate JSON. ✅
 - On mount, render all numbers on screen (to be later formatted), ✅
-- Format into try-catch and with suitable error codes:
-  - Error for no data or fail to parse.
-  - Error for no response code 500
-  - 200 code for success.
+- Format into try-catch and with suitable error codes: ✅
+  - Error for no data or fail to parse. ✅
+  - Error for no response code 500 ✅
+  - 200 code for success. ✅
 
 
 
@@ -25,3 +25,9 @@ Todays plan:
 End of session: 51 minutes
 Start of next session.
 End of session: 39 minutes
+Start of session 3.
+
+
+
+
+total = 1hr 30 min
