@@ -10,6 +10,7 @@ Todays plan:
 - Populate JSON.
 - On mount, render all numbers on screen (to be later formatted),
 - Write 3 api calls for fizz buzz and fizz buzz - all manipulate copies of the JSON rather than the JSON file itself.
+- Format into try-catch and with suitable error codes.
 
 
 

@@ -10,18 +10,26 @@ function App() {
     // Parse the JSON response
     let data = await response.json();
     // Set state to response 
-    setApiResult(data.message);
+    setApiResult(data.payload);
   }
   
   // On page render (on mount) => call fetch function
   useEffect(()=>{
     console.log(apiResult)
+    console.log("apiResult:", apiResult);
+
     fetchData()
   }, []);
 
   return(
     // render result on page.
-    <h1>{apiResult}</h1>
+    <>
+    <h1>FizzBuzz</h1>
+    <div>
+    {apiResult && apiResult.map(item => <p key={item}>{item}</p>)}
+
+    </div>
+    </>
   )
 }
 
