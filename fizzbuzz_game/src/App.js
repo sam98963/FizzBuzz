@@ -1,5 +1,8 @@
 import './App.css';
 import {useEffect, useState} from "react"
+import FizzBuzzList from './components/FizzBuzzList';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   // establish apiResult state to store response data
   const [apiResult, setApiResult] = useState();
@@ -25,10 +28,7 @@ function App() {
     // render result on page.
     <>
     <h1>FizzBuzz</h1>
-    <div>
-    {apiResult && apiResult.map(item => <p key={item}>{item}</p>)}
-
-    </div>
+    <FizzBuzzList apiResult = {apiResult}/>
     </>
   )
 }
