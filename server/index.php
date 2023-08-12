@@ -45,4 +45,49 @@ echo json_encode($response);
   exit();
 }
 
+
+// FIZZBUZZ API
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_SERVER['REQUEST_URI'] == "/fizzbuzz") {
+  // Return a successful response code.
+  http_response_code(200);
+  // response object
+$fizzBuzz = handleFizzBuzz($jsonData);
+$response = array("payload"=>$fizzBuzz);
+// Allow Json response
+header("Content-type: application/json");
+// Object to Json
+echo json_encode($response);
+  exit();
+}
+
+
+
+
+// FUNCTIONS
+
+// FizzBuzz function to handle the data manipulation
+
+function handleFizzBuzz($jsonData){
+    for($i = 0; $i<count($jsonData); $i++){
+      if($jsonData[$i]%3 === 0 && $jsonData[$i]%5 !== 0){
+        $jsonData[$i] = "Fizz";
+      } else if($jsonData[$i]%5 === 0 && $jsonData[$i]%3 !== 0){
+        $jsonData[$i] = "Buzz";
+      } else if($jsonData[$i]%5 === 0 && $jsonData[$i]%3 === 0){
+        $jsonData[$i] = "FizzBuzz";
+      }
+    }
+    return $jsonData;
+}
+
+
+
+
+
+
+
+
+
 ?>
