@@ -24,3 +24,4 @@ Todays plan:
 
 End of session: 51 minutes
 Start of next session.
+End of session: 39 minutes
