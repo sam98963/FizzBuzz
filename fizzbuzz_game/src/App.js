@@ -24,10 +24,20 @@ function App() {
     fetchData()
   }, []);
 
+
+  // HandleClick to handle api calls on button click
+  async function handleClick(){
+        const response = await fetch("http://localhost:8000/fizzbuzz");
+        const data = await response.json();
+        console.log(data)
+        setApiResult(data.payload);
+      }
+
   return(
     // render result on page.
     <>
     <h1>FizzBuzz</h1>
+    <button onClick={handleClick}>FizzBuzz</button>
     <FizzBuzzList apiResult = {apiResult}/>
     </>
   )

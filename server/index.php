@@ -54,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_SERVER['REQUEST_URI'] == "/fizzbuz
   http_response_code(200);
   // response object
 $fizzBuzz = handleFizzBuzz($jsonData);
+
 $response = array("payload"=>$fizzBuzz);
 // Allow Json response
 header("Content-type: application/json");
@@ -68,21 +69,25 @@ echo json_encode($response);
 // FUNCTIONS
 
 // FizzBuzz function to handle the data manipulation
-
+// Recieves array as arguement
 function handleFizzBuzz($jsonData){
+  // iterate through array
     for($i = 0; $i<count($jsonData); $i++){
+      // If 3 and not 5, fizz
       if($jsonData[$i]%3 === 0 && $jsonData[$i]%5 !== 0){
         $jsonData[$i] = "Fizz";
-      } else if($jsonData[$i]%5 === 0 && $jsonData[$i]%3 !== 0){
+      } 
+      // If 5 and not 3, buzz
+      else if($jsonData[$i]%5 === 0 && $jsonData[$i]%3 !== 0){
         $jsonData[$i] = "Buzz";
-      } else if($jsonData[$i]%5 === 0 && $jsonData[$i]%3 === 0){
+      } 
+      // if both, fizzbuzz
+      else if($jsonData[$i]%5 === 0 && $jsonData[$i]%3 === 0){
         $jsonData[$i] = "FizzBuzz";
       }
     }
     return $jsonData;
 }
-
-
 
 
 
