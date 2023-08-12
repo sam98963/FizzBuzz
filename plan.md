@@ -16,6 +16,9 @@ Todays plan:
 
 
 
+Plan for session 3
+- Install bootstrap and make card component for each number, map over component.
+- Make a container div, row, flex box with flex-wrap on.
 - Write 3 api calls for fizz buzz and fizz buzz - all manipulate copies of the JSON rather than the JSON file itself. 
 
 
