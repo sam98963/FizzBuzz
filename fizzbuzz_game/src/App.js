@@ -2,6 +2,7 @@ import './App.css';
 import {useEffect, useState} from "react"
 import FizzBuzzList from './components/FizzBuzzList';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header';
 
 function App() {
   // establish apiResult state to store response data
@@ -55,13 +56,15 @@ function App() {
 
   return(
     // render result on page.
-    <>
-    <h1>FizzBuzz</h1>
-    <button onClick={handleFizzClick}>Fizz</button>
-    <button onClick={handleBuzzClick}>Buzz</button>
-    <button onClick={handleFizzBuzzClick}>FizzBuzz</button>
+    <div className='d-flex flex-column align-items-center' style={{width:"100vw"}}>
+    <Header />
+    <div className='d-flex justify-content-center mb-3'>
+    <button className="m-2" onClick={handleFizzClick}>Fizz</button>
+    <button className="m-2" onClick={handleBuzzClick}>Buzz</button>
+    <button className="m-2" onClick={handleFizzBuzzClick}>FizzBuzz</button>
+    </div>
     <FizzBuzzList apiResult = {apiResult}/>
-    </>
+    </div>
   )
 }
 
