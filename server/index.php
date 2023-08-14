@@ -1,4 +1,8 @@
 <?php 
+
+// On mount api call to render all numbers, unmodified.
+
+
 // Allow front-end server access.
 header("Access-Control-Allow-Origin: http://localhost:3000");
 // Allow GET requests.
@@ -44,60 +48,6 @@ header("Content-type: application/json");
 echo json_encode($response);
   exit();
 }
-
-
-// FIZZBUZZ API
-
-
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_SERVER['REQUEST_URI'] == "/fizzbuzz") {
-  // Return a successful response code.
-  http_response_code(200);
-
-  // Make a copy of jsonData and return this in response as "debug" data, to allow compare between modified and unmodified.
-
-  $debugOutput = array_merge([], $jsonData);
-
-  // response object
-$fizzBuzz = handleFizzBuzz($jsonData);
-$response = array("payload"=>$fizzBuzz,
-                  "debug" => $debugOutput);
-// Allow Json response
-header("Content-type: application/json");
-// Object to Json
-echo json_encode($response);
-  exit();
-}
-
-
-
-
-// FUNCTIONS
-
-// FizzBuzz function to handle the data manipulation
-// Recieves array as arguement
-function handleFizzBuzz($jsonData){
-  // iterate through array
-    for($i = 0; $i<count($jsonData); $i++){
-      // If 3 and not 5, fizz
-      if($jsonData[$i]%3 === 0 && $jsonData[$i]%5 !== 0){
-        $jsonData[$i] = "Fizz";
-      } 
-      // If 5 and not 3, buzz
-      else if($jsonData[$i]%5 === 0 && $jsonData[$i]%3 !== 0){
-        $jsonData[$i] = "Buzz";
-      } 
-      // if both, fizzbuzz
-      else if($jsonData[$i]%5 === 0 && $jsonData[$i]%3 === 0){
-        $jsonData[$i] = "FizzBuzz";
-      }
-    }
-    return $jsonData;
-}
-
-
-
-
-
 
 
 ?>

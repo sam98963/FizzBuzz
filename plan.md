@@ -25,14 +25,14 @@ Plan for session 3
 
 
 For next session:
- - Debug the handleFizzBuzz function - see why numbers are not being transformed (possible issue with types.)
- - Complete other 2 functions and endpoints.
+ - Debug the handleFizzBuzz function - see why numbers are not being transformed (possible issue with types.) ✅
+ - Complete other 2 functions and endpoints. ✅
 
  Plan for this session:
-- Quick bit of debugging, see if the code is returning original array or the array is not being modified.
-- Finish other 2 api endpoints
-- Write instructions for how to use and neaten up code/neaten up comments.
-- Neaten up CSS.
+- Quick bit of debugging, see if the code is returning original array or the array is not being modified. ✅
+- Finish other 2 api endpoints ✅
+- Write instructions for how to use and neaten up code/neaten up comments. ✅
+- Neaten up CSS. ✅
 
 
 
