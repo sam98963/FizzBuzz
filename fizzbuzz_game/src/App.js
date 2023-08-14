@@ -30,6 +30,8 @@ function App() {
         const response = await fetch("http://localhost:8000/fizzbuzz");
         const data = await response.json();
         console.log(data)
+        console.log("This is the unmodified data:",data.debug)
+        console.log("This is the modified data:",data.payload)
         setApiResult(data.payload);
       }
 

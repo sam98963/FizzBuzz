@@ -52,10 +52,15 @@ echo json_encode($response);
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_SERVER['REQUEST_URI'] == "/fizzbuzz") {
   // Return a successful response code.
   http_response_code(200);
+
+  // Make a copy of jsonData and return this in response as "debug" data, to allow compare between modified and unmodified.
+
+  $debugOutput = array_merge([], $jsonData);
+
   // response object
 $fizzBuzz = handleFizzBuzz($jsonData);
-
-$response = array("payload"=>$fizzBuzz);
+$response = array("payload"=>$fizzBuzz,
+                  "debug" => $debugOutput);
 // Allow Json response
 header("Content-type: application/json");
 // Object to Json
