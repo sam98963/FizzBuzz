@@ -7,10 +7,8 @@ header("Access-Control-Allow-Methods: GET");
   $jsonFilePath = "./data.json";
   $jsonData = json_decode(file_get_contents($jsonFilePath));
 
-$data = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-
 // establish endpoint as this file.
-if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_SERVER['REQUEST_URI'] == "/test.php") {
+if ($_SERVER['REQUEST_METHOD'] === 'GET' && $_SERVER['REQUEST_URI'] == "/fizzbuzz.php") {
   // return a successful response code.
   http_response_code(200);
 

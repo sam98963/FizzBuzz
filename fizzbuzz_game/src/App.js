@@ -26,8 +26,26 @@ function App() {
 
 
   // HandleClick to handle api calls on button click
-  async function handleClick(){
-        const response = await fetch("http://localhost:8000/test.php");
+  async function handleFizzBuzzClick(){
+        const response = await fetch("http://localhost:8000/fizzbuzz.php");
+        const data = await response.json();
+        console.log(data)
+        console.log("This is the unmodified data:",data.debug)
+        console.log("This is the modified data:",data.payload)
+        setApiResult(data.payload);
+      }
+
+  async function handleFizzClick(){
+        const response = await fetch("http://localhost:8000/fizz.php");
+        const data = await response.json();
+        console.log(data)
+        console.log("This is the unmodified data:",data.debug)
+        console.log("This is the modified data:",data.payload)
+        setApiResult(data.payload);
+      }
+
+  async function handleBuzzClick(){
+        const response = await fetch("http://localhost:8000/buzz.php");
         const data = await response.json();
         console.log(data)
         console.log("This is the unmodified data:",data.debug)
@@ -39,7 +57,9 @@ function App() {
     // render result on page.
     <>
     <h1>FizzBuzz</h1>
-    <button onClick={handleClick}>FizzBuzz</button>
+    <button onClick={handleFizzClick}>Fizz</button>
+    <button onClick={handleBuzzClick}>Buzz</button>
+    <button onClick={handleFizzBuzzClick}>FizzBuzz</button>
     <FizzBuzzList apiResult = {apiResult}/>
     </>
   )
