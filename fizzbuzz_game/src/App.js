@@ -27,7 +27,7 @@ function App() {
 
   // HandleClick to handle api calls on button click
   async function handleClick(){
-        const response = await fetch("http://localhost:8000/fizzbuzz");
+        const response = await fetch("http://localhost:8000/test.php");
         const data = await response.json();
         console.log(data)
         console.log("This is the unmodified data:",data.debug)
