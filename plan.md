@@ -47,3 +47,12 @@ End of session: 42 minutes
 
 
 total = 2hr 20 min
+
+
+
+Plan to finish & changes to consider:
+- All three methods in one - Fizz buzz and fizzBuzz?
+- Try/catch and proper error handling and response codes.
+- Testing
+- Render card components with different colors dependent on modified array.
+- Do not read JSON, just collate an array, encode/write and return.

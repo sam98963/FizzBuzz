@@ -19,8 +19,6 @@ function App() {
   
   // On page render (on mount) => call fetch function
   useEffect(()=>{
-    console.log(apiResult)
-    console.log("apiResult:", apiResult);
 
     fetchData()
   }, []);
@@ -31,8 +29,6 @@ function App() {
         const response = await fetch("http://localhost:8000/fizzbuzz.php");
         const data = await response.json();
         console.log(data)
-        console.log("This is the unmodified data:",data.debug)
-        console.log("This is the modified data:",data.payload)
         setApiResult(data.payload);
       }
 
@@ -40,30 +36,25 @@ function App() {
         const response = await fetch("http://localhost:8000/fizz.php");
         const data = await response.json();
         console.log(data)
-        console.log("This is the unmodified data:",data.debug)
-        console.log("This is the modified data:",data.payload)
         setApiResult(data.payload);
       }
 
   async function handleBuzzClick(){
         const response = await fetch("http://localhost:8000/buzz.php");
         const data = await response.json();
-        console.log(data)
-        console.log("This is the unmodified data:",data.debug)
-        console.log("This is the modified data:",data.payload)
         setApiResult(data.payload);
       }
 
   return(
     // render result on page.
     <div className='d-flex flex-column align-items-center' style={{width:"100vw"}}>
-    <Header />
-    <div className='d-flex justify-content-center mb-3'>
-    <button className="m-2" onClick={handleFizzClick}>Fizz</button>
-    <button className="m-2" onClick={handleBuzzClick}>Buzz</button>
-    <button className="m-2" onClick={handleFizzBuzzClick}>FizzBuzz</button>
-    </div>
-    <FizzBuzzList apiResult = {apiResult}/>
+      <Header />
+      <div className='d-flex justify-content-center mb-3'>
+        <button className="m-2" onClick={handleFizzClick}>Fizz</button>
+        <button className="m-2" onClick={handleBuzzClick}>Buzz</button>
+        <button className="m-2" onClick={handleFizzBuzzClick}>FizzBuzz</button>
+      </div>
+      <FizzBuzzList apiResult = {apiResult}/>
     </div>
   )
 }
